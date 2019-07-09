@@ -1,0 +1,15 @@
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-quartz'
+    implementation 'mysql:mysql-connector-java'
+    
+    compile("com.guoshouxiang.nest:nest-spring-boot-starter")
+    compile("com.guoshouxiang.nest:nest-mybatis-pagination-plugin")
+    compile("org.mybatis.spring.boot:mybatis-spring-boot-starter")
+    compile(group: 'net.sf.dozer', name: 'dozer')
+   
+
+    compile project(":demo-appservice-contract")
+    compile project(":demo-api-v1")
+    compile project(":demo-api-v2")
+}

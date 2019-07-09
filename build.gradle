@@ -1,0 +1,46 @@
+buildscript {
+    ext {
+        springBootVersion = "2.1.6.RELEASE"
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+    repositories {
+        mavenCentral()
+    }
+}
+
+allprojects {
+    group = 'com.guoshouxiang.nest'
+    version = '1.1-SNAPSHOT'
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'maven'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'org.springframework.boot'
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    sourceCompatibility = '1.8'
+
+    ext {
+        nestVersion = "1.1-SNAPSHOT"
+    }
+    dependencyManagement {
+        dependencies {
+            dependency("com.guoshouxiang.nest:nest-spring-boot-starter:${nestVersion}")
+            dependency("com.guoshouxiang.nest:nest-mybatis-pagination-plugin:${nestVersion}")
+            dependency("org.mybatis.spring.boot:mybatis-spring-boot-starter:2.0.1")
+            dependency(group: 'net.sf.dozer', name: 'dozer', version: '5.5.1')
+            dependency('io.springfox:springfox-swagger2:2.9.2')
+            dependency(group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2')
+        }
+
+    }
+}
+
