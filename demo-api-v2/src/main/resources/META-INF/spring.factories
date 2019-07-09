@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.guoshouxiang.nest.demo.api.v2.AutoConfiguration
